@@ -121,33 +121,33 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-SPI\ WS2182B.out \
+SPI\ WS2182B\ (LIB).out \
 
 EXE_OUTPUTS__QUOTED += \
-"SPI WS2182B.out" \
+"SPI WS2182B (LIB).out" \
 
 BIN_OUTPUTS += \
-SPI\ WS2182B.hex \
+SPI\ WS2182B\ (LIB).hex \
 
 BIN_OUTPUTS__QUOTED += \
-"SPI WS2182B.hex" \
+"SPI WS2182B (LIB).hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "SPI WS2182B.out"
+	@$(MAKE) --no-print-directory -Onone "SPI WS2182B (LIB).out"
 
 # Tool invocations
-SPI\ WS2182B.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+SPI\ WS2182B\ (LIB).out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"SPI WS2182B.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"J:/Program Files/CCS/ccsv7/ccs_base/msp430/include" -i"J:/Program Files/CCS/ccsv7/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/lib" -i"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="SPI WS2182B_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "SPI WS2182B.out" $(ORDERED_OBJS)
+	"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"SPI WS2182B (LIB).map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"J:/Program Files/CCS/ccsv7/ccs_base/msp430/include" -i"J:/Program Files/CCS/ccsv7/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/lib" -i"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="SPI WS2182B (LIB)_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "SPI WS2182B (LIB).out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-SPI\ WS2182B.hex: $(EXE_OUTPUTS)
+SPI\ WS2182B\ (LIB).hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: MSP430 Hex Utility'
-	"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "SPI WS2182B.hex" $(EXE_OUTPUTS__QUOTED)
+	"J:/Program Files/CCS/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "SPI WS2182B (LIB).hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
